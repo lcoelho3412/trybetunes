@@ -3,9 +3,6 @@ import { Navigate } from "react-router-dom";
 import Loading from "./Loading";
 import { createUser } from "../services/userAPI";
 
-import { Input, Switch } from "@nextui-org/react";
-import { Button } from "@nextui-org/react";
-
 class Login extends Component {
   constructor() {
     super();
@@ -42,30 +39,30 @@ class Login extends Component {
       <>
         <div className="flex justify-center items-center h-screen">
           <form className="mx-auto">
-            <p>Login</p>
-            <Input
-              className="py-4"
+            <p className="py-4">Login</p>
+            <input
+              className="input outline success"
               type="text"
               name="input-name"
               data-testid="login-name-input"
               placeholder="Digite seu Login"
               onChange={this.saveUser}
             />
-            <Button
-              color="primary"
-              className=""
-              name="login-btn"
-              type="submit"
-              data-testid="login-submit-button"
-              disabled={isButtonDisabled}
-              onClick={this.login}
-            >
-              Entrar
-            </Button>
             <div className="py-4">
-              <Switch size="sm" defaultSelected>
-                Lembrar de mim
-              </Switch>
+              <button
+                className="btn outline bw"
+                name="login-btn"
+                type="submit"
+                data-testid="login-submit-button"
+                disabled={isButtonDisabled}
+                onClick={this.login}
+              >
+                Entrar
+              </button>
+              <div className="py-4 flex gap-4">
+                <input className="switch bordered success" type="checkbox" />
+                <p className="text-sm ">Lembrar de mim</p>
+              </div>
             </div>
             <div className=" ">
               {loadingScreen && <Loading />}

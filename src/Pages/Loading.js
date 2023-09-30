@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import {Spinner} from "@nextui-org/react";
+import React, { Component } from "react";
 
 class Loading extends Component {
   render() {
     return (
-      <div >
-        <Spinner label='carregando' size="lg" />
+      <div className="loader bw flex items-center justify-center">
+        <div className="bar-shake-y" />
       </div>
     );
   }
